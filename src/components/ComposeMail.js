@@ -18,7 +18,9 @@ function ComposeMail() {
                 await axios.post("https://gmail-clone-api.herokuapp.com/api/mailer/send", values, {
                     headers : {
                         "Content-Type": "application/json",
-                        Authorization: `Bearer ${token}`
+                        Authorization: `Bearer ${token}`,
+                        'Access-Control-Allow-Origin': '*',
+                        'Access-Control-Allow-Methods': 'GET,POST,DELETE,OPTIONS'
                     }
                 })
                 navigate("/dashboard")
